@@ -36,11 +36,11 @@ const Body = () => {
 
         <div className="  mb-[200px] ml-[90px]  ">
 
-            <div className="filter flex m-3 ">
-                <div className="search m-4 p-4">
-                    <input type="text" className="border border-solid border-black" value={searchText} onChange={(e) => { setsearchText(e.target.value) }} />
+            <div className="filter flex mb-5 ">
+                <div className=" m-4 p-4">
+                    <input  type="text" className="text-xs border border-gray-300 shadow-md focus:border-gray-500 transition-all duration-300 px-2 py-2 outline-none  rounded-lg" placeholder="Enter your restaurent" value={searchText} onChange={(e) => { setsearchText(e.target.value) }} />
 
-                    <button className="px-4 py-2 bg-green-50 m-4" onClick={() => {
+                    <button className="text-xs font-medium shadow-md px-4 py-2 outline-none ml-5 md:mr-2 right-10 border border-gray-300 bg-orange-500 hover:border-gray-500 transition-all duration-200 ease-in-out text-white rounded md:bg-white md:text-black" onClick={() => {
                         console.log(searchText);
 
                         //for display on the ui we have to filtered the res...
@@ -52,7 +52,7 @@ const Body = () => {
                 </div>
 
                 <div className="search  flex items-center">
-                    <button className=" px-4 py-2 mb-2  mr-2 ml-[78px]  bg-orange-500 text-white xl:bg-white rounded-full xl:hover:bg-orange-500 xl:hover:text-white xl:text-black  md:mb-0 sm:ml-[222] md:ml-[60] lg:ml-[390] xl:ml-[2]"
+                    <span className="  px-4 py-2 outline-none m-2 ml-9 rounded-full  hover:bg-orange-500  hover:text-white  transition-all duration-200 ease-in-out text-black cursor-pointer"
                         onClick={() => {
                             const filteredList = listOfRestaurent.filter((res) => res.info.avgRating > 4);
                             // setlistOfRestaurent(filteredList);
@@ -60,11 +60,11 @@ const Body = () => {
                         }}
                     >
                         Top rated Resturet
-                    </button>
+                    </span>
 
 
 
-                    <button className="hidden xl:block px-3 py-2 mx-2 xl:ml-[100]  bg-white rounded-full hover:bg-orange-500 hover:text-white"
+                    <span className=" px-4 py-2 ml-9 outline-none m-2  rounded-full  hover:bg-orange-500 hover:text-white  transition-all duration-200 ease-in-out text-black cursor-pointer"
                         onClick={() => {
 
                             let sortedlist = [...listOfRestaurent]
@@ -75,8 +75,8 @@ const Body = () => {
                         }}
                     >
                         Nearest Restaurent
-                    </button>
-                    <button className="hidden xl:block px-2 py-2 mx-2 xl:ml-[100]  bg-white rounded-full hover:bg-orange-500 hover:text-white"
+                    </span>
+                    <span className="   px-4 py-2 ml-9 outline-none m-2  rounded-full  hover:bg-orange-500 hover:text-white  transition-all duration-200 ease-in-out text-black cursor-pointer"
                         onClick={() => {
 
                             let sortedlist = [...listOfRestaurent]
@@ -86,8 +86,8 @@ const Body = () => {
                         }}
                     >
                         Cost:High to Low
-                    </button>
-                    <button className="hidden xl:block px-2 py-2 mx-2 xl:ml-[100]  bg-white rounded-full hover:bg-orange-500 hover:text-white"
+                    </span>
+                    <span className="  px-4 py-2 ml-9 rounded-full  hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out text-black cursor-pointer"
                         onClick={() => {
 
                             let sortedlist = [...listOfRestaurent]
@@ -98,14 +98,14 @@ const Body = () => {
                         }}
                     >
                         Delivery Time
-                    </button>
+                    </span>
 
                 </div>
             </div>
-            <div className=" absolute top-[220px] border-t border-gray-500 min-h-px w-[1330px] "></div>
-                //for line height
+            <div className=" absolute top-[195px] border-t border-gray-500 min-h-px w-[1330px] "></div>
+             
 
-            <div className="flex flex-wrap">
+            <div className=" flex flex-wrap">
 
                 {filteredRestaurent.map((restaurent) => (
                     <Link key={restaurent.info.id} to={"/restaurant/" + restaurent.info.id}>

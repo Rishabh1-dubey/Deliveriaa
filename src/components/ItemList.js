@@ -1,6 +1,15 @@
 // import { CDN_URL } from "../utils/constents";
-import {CDN_URL} from "../utils/constents";
-const ItemList = ({items}) => {
+import { useDispatch } from "react-redux";
+import { CDN_URL } from "../utils/constents";
+import { addItem } from "../utils/cartSlice";
+
+const ItemList = ({ items }) => {
+    const dispatch = useDispatch();
+    const handAddItem = (item) => {
+        dispatch(addItem(item));
+    }
+
+
     return (
         <div>
             {items.map((item) => (
@@ -15,11 +24,18 @@ const ItemList = ({items}) => {
                         <p>{item.card.info.description}</p>
                     </div>
                     <div className="w-3/12 p-3">
-                    <img src={CDN_URL + item.card.info.imageId} className="rounded-md" />
-                   </div>
+                        <div className="absolute ">
+                            <button className="p-2 bg-white shadow-lg m-auto border text-black rounded-md hover:bg-yellow-300  cursor-pointer"
+                                onClick={() => handAddItem(item)}>
+                                Add+
+                            </button>
+                        </div>
+                        <img src={CDN_URL + item.card.info.imageId} className="rounded-lg" />
+                    </div>
                 </div>
             ))}
         </div>
-    )
-            }
-    export default ItemList;
+    );
+};
+
+export default ItemList;

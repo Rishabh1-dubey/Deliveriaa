@@ -10,7 +10,7 @@ const RestaurentCard = (props) => {
         lastMileTravelString } = resData?.info;
 
     return (
-        <div className="m-4 p-4 h-[370px] w-[300px] shadow-xl
+        <div className="m-4 p-4   h-[370px] w-[300px] shadow-xl
         text-rose-800  bg-white rounded-md hover:shadow-amber-500  cursor-pointer transition ease-in-out delay-50 hover:scale-105 duration-100">
             <img className="w-[270px] h-[170px] rounded-lg" src={CDN_URL + cloudinaryImageId} />
 
