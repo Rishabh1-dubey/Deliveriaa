@@ -13,7 +13,7 @@ import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
-
+import LogIn from "./components/LogIn";
 
 
 const AppLayOut = () => {
@@ -52,6 +52,10 @@ const approuter = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart />
+            }, 
+            {
+                path: "/login",
+                element: <LogIn/>
             },
         ],
         errorElement: <Error />,

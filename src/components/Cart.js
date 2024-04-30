@@ -1,18 +1,17 @@
-import {  useSelector } from "react-redux";
-import ItemList from "./ItemList";
+import { useSelector } from "react-redux"
 import { clearCart } from "../utils/cartSlice";
-import {  useDispatch } from "react-redux";
-
-
-
+import { useDispatch } from "react-redux";
+import ItemList from "./Itemlist";
 
 const Cart = () => {
-    const cartItems =useSelector((store)=>store.cart.items);
+
+    const cartItems = useSelector((store) => store.cart.items);
     console.log(cartItems);
-        const dispatch = useDispatch();
-        const handleClearCart=()=>{
-            dispatch(clearCart());
-        };
+
+    const dispatch = useDispatch();
+    const handleClearCart = () => {
+        dispatch(clearCart());
+    };
     return (
         <div className="text-center m-4 p-4">
             <h1 className="text-2xl font-bold text-center">Cart</h1>
@@ -30,4 +29,5 @@ const Cart = () => {
         </div>
     );
 };
-export default  Cart;
+export default Cart;
+

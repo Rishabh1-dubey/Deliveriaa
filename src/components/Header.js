@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../Items/img/logo.png";
 import UseOnlineStaus from "./CustomHook/UseOnlineSatus";
@@ -29,12 +29,12 @@ const Header = () => {
                     <li className="px-6  hover:text-black  hover:rounded-full h-10 pt-[6] hover:bg-yellow-200  hover:cursor-pointer"><Link to="/contact">Contact Us</Link></li>
 
                     <li className="  px-6  hover:text-black  hover:rounded-full h-10 pt-[6] hover:bg-yellow-200  hover:cursor-pointer">
-                        <Link to="cart">Cart-{cartItems.length}</Link> </li>
+                        <Link to="/cart">Cart-{cartItems.length}</Link> </li>
 
                 </ul>
             </div>
-            <button className=" px-8  hidden sm:block sm:mr-4 md:mr-10 bg-red-900 my-7 py-1  rounded-md hover:bg-yellow-200  hover:text-black">Login</button>
+            <button className=" px-8  hidden sm:block sm:mr-4 md:mr-10 bg-red-900 my-7 py-1  rounded-md hover:bg-yellow-200  hover:text-black"><Link to="/login">Login</Link></button>
         </div>
-    )
-}
+    );
+};
 export default Header;
