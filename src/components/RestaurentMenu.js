@@ -4,7 +4,10 @@ import useRestrauentMenu from "./CustomHook/useRestrauentMenu";
 import Shimmer from "./Shimmer";
 import RestaurentCategory from "./RestaurentCategory";
 import { useState } from "react";
-
+import { IoFastFoodOutline } from "react-icons/io5";
+import { FaLocationCrosshairs } from "react-icons/fa6";
+import { TiStarHalfOutline } from "react-icons/ti";
+import { FaHandPointRight } from "react-icons/fa";
 const RestaurentMenu = () => {
   // const [ResInfo,setResInfo]=useState(null);
   //useParams gives you to resId
@@ -19,7 +22,18 @@ const RestaurentMenu = () => {
   //fetch data custome hooks me lekr chale gye
 
   if (ResInfo === null) return <Shimmer />;
-  const { name, cuisines, costForTwoMessage } =
+  const {
+    name,
+    cuisines,
+    costForTwoMessage,
+    locality,
+    areaName,
+    city,
+    sla,
+    avgRating,
+    totalRatingsString,
+    lastMileTravelString,
+  } =
     ResInfo?.cards[0]?.card?.card?.info || ResInfo?.cards[2]?.card?.card?.info;
 
   // const {itemCards}=ResInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
@@ -41,11 +55,29 @@ const RestaurentMenu = () => {
   // cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards
 
   return (
-    <div className="text-center">
-      <h1 className="font-bold my-6 text-2xl">{name}</h1>
-      <p className="font-bold  text-lg">
-        {cuisines.join(" , ")}-{costForTwoMessage}
-      </p>
+    <div className="border border-t-black  w-full text-center pt-5">
+      <div className="text-black mt-7 ml-[370px] w-[800] ">
+        <div className=" flex-col">
+          {/* <h1 className="font-bold my-6 text-2xl">{name}</h1> */}
+          {/* //this code is done bt me */}
+          <h1 className="font-bold  text-2xl  mt-2">{name}</h1>
+          <h2 className=" flex mt-4 font-bold  text-lg ">
+            <IoFastFoodOutline className="mt-1 ml-3 mr-1 " />
+            {cuisines.join(" , ")}-{costForTwoMessage}
+          </h2>
+          <h2 className="flex mb-2">
+            <FaLocationCrosshairs className="mt-1 ml-[10] mr-1" />
+            {locality + ",     "}
+            {areaName}, {city} -{" " + sla?.lastMileTravelString}
+          </h2>
+          <h3 className="font-bold text-lg mt-[5] text-black-300 flex pl-2 border-b-2 pb-1 border-black">
+            {" "}
+            <TiStarHalfOutline className="mr-1 mt-1 text-green-300" />
+            {avgRating}{" "}
+          </h3>
+          <h3 className="ml-[665px]  mb-1 flex "> <FaHandPointRight className="text-2xl text-red-700 m-2" />{totalRatingsString}</h3>
+        </div>
+      </div>
       {/* <ul>
                 {categories&&categories.map((item) => {
                     return <>

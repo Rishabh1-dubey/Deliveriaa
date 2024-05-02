@@ -14,52 +14,56 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 import LogIn from "./components/LogIn";
-
+import Help from "./components/Help";
 
 const AppLayOut = () => {
-    return (
-        <Provider store={appStore}>
-            <div className="app">
-
-                <Header />
-                {/* <Body/> */}
-                <Outlet />
-            </div>
-        </Provider>
-
-    );
+  return (
+    <Provider store={appStore}>
+      <div className="app">
+        <Header />
+        {/* <Body/> */}
+        <Outlet />
+      </div>
+    </Provider>
+  );
 };
 
 const approuter = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <AppLayOut />,
+    children: [
+      {
         path: "/",
-        element: <AppLayOut />,
-        children: [
-            {
-                path: "/",
-                element: <Body />
-            },
-            {
-                path: "/about",
-                element: <About />
-            }, {
-                path: "/contact",
-                element: <Contact />
-            }, {
-                path: "/restaurant/:id",
-                element: <RestaurentMenu />
-            },
-            {
-                path: "/cart",
-                element: <Cart />
-            }, 
-            {
-                path: "/login",
-                element: <LogIn/>
-            },
-        ],
-        errorElement: <Error />,
-    },
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },{
+        path: "/faq",
+        element: <Help/>,
+      },
+      ,
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurentMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/login",
+        element: <LogIn />,
+      },
+    ],
+    errorElement: <Error />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

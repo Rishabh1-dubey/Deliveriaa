@@ -22,9 +22,12 @@ const Header = () => {
                 <ul className="flex p-4 m-4">
                     <li className="m-2 px-6">online : {onlineStatus ? "✅" : "🔴"}</li>
 
+
                     <li className=" hidden xl:block px-6 hover:bg-yellow-200  pt-2 rounded-full hover:text-black hover:cursor-pointer hover:transition duration-300 "><Link to="/">Home</Link></li>
 
                     <li className=" hidden xl:block px-6     hover:bg-yellow-200  pt-2 rounded-full hover:text-black hover:cursor-pointer  hover:transition duration-300"><Link to="/about">About Us</Link></li>
+
+                    <li className="px-5 pt-2 hover:bg-yellow-200  rounded-full hover:text-black hover:transition-duration-300 hover:cursor-pointer"><Link to="/faq">Help</Link></li>
 
                     <li className="px-6  hover:text-black  hover:rounded-full h-10 pt-[6] hover:bg-yellow-200  hover:cursor-pointer"><Link to="/contact">Contact Us</Link></li>
 
