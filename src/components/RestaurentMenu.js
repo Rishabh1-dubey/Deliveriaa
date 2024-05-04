@@ -60,7 +60,7 @@ const RestaurentMenu = () => {
 
   return (
     <div className="border border-t-black  w-full text-center pt-5 ">
-      <div className="text-black mt-7 ml-[370px] w-[800]  border border-red-400">
+      <div className="text-black mt-7 ml-[370px] w-[800]  ">
         <div className=" flex-col">
           {/* <h1 className="font-bold my-6 text-2xl">{name}</h1> */}
           {/* //this code is done bt me */}
@@ -85,16 +85,17 @@ const RestaurentMenu = () => {
             {totalRatingsString}
           </h3>
         </div>
-        <div className="  ml-[232] mt-3 mb-2 font-bold text-black text-lg font-sans">
-        </div>
-          <h2 className="flex">
-            <MdOutlineDeliveryDining className="mt-[6] mr-[6]" />
-            {sla?.deliveryTime} mins{" "}
-          </h2>
-          <h3 className=" flex font-bold text-lg  ">
-            <HiCurrencyRupee className="mt-[6] h-[14] mr-[6]" />
-            {costForTwo / 100} {" for Two"}
-          </h3>
+        <div className="  ml-[232] mt-3 mb-2 font-bold text-black text-lg font-sans"></div>
+        <h2 className="flex">
+          <MdOutlineDeliveryDining className="mt-[6] mr-[6]" />
+          {sla?.deliveryTime} mins{" "}
+        </h2>
+        <h3 className=" flex font-bold text-lg  ">
+          <HiCurrencyRupee className="mt-[6] h-[14] mr-[6]" />
+          {costForTwo / 100} {" for Two"}
+        </h3>
+        <div className="w-full h-[1px] border
+         border-black"></div>
       </div>
       {/* <ul>
                 {categories&&categories.map((item) => {
