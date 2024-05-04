@@ -14,7 +14,7 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 import LogIn from "./components/LogIn";
-import Help from "./components/Help";
+
 
 const AppLayOut = () => {
   return (
@@ -40,11 +40,7 @@ const approuter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
-      },{
-        path: "/faq",
-        element: <Help/>,
       },
-      ,
       {
         path: "/contact",
         element: <Contact />,

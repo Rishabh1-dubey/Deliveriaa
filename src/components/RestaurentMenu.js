@@ -8,6 +8,8 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { FaHandPointRight } from "react-icons/fa";
+import { MdOutlineDeliveryDining } from "react-icons/md";
+import { HiCurrencyRupee } from "react-icons/hi2";
 const RestaurentMenu = () => {
   // const [ResInfo,setResInfo]=useState(null);
   //useParams gives you to resId
@@ -31,7 +33,9 @@ const RestaurentMenu = () => {
     city,
     sla,
     avgRating,
+    costForTwo,
     totalRatingsString,
+    deliveryTime,
     lastMileTravelString,
   } =
     ResInfo?.cards[0]?.card?.card?.info || ResInfo?.cards[2]?.card?.card?.info;
@@ -55,8 +59,8 @@ const RestaurentMenu = () => {
   // cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards
 
   return (
-    <div className="border border-t-black  w-full text-center pt-5">
-      <div className="text-black mt-7 ml-[370px] w-[800] ">
+    <div className="border border-t-black  w-full text-center pt-5 ">
+      <div className="text-black mt-7 ml-[370px] w-[800]  border border-red-400">
         <div className=" flex-col">
           {/* <h1 className="font-bold my-6 text-2xl">{name}</h1> */}
           {/* //this code is done bt me */}
@@ -75,8 +79,22 @@ const RestaurentMenu = () => {
             <TiStarHalfOutline className="mr-1 mt-1 text-green-300" />
             {avgRating}{" "}
           </h3>
-          <h3 className="ml-[665px]  mb-1 flex "> <FaHandPointRight className="text-2xl text-red-700 m-2" />{totalRatingsString}</h3>
+          <h3 className="ml-[665px]  mb-1 flex ">
+            {" "}
+            <FaHandPointRight className="text-2xl text-red-700 m-2" />
+            {totalRatingsString}
+          </h3>
         </div>
+        <div className="  ml-[232] mt-3 mb-2 font-bold text-black text-lg font-sans">
+        </div>
+          <h2 className="flex">
+            <MdOutlineDeliveryDining className="mt-[6] mr-[6]" />
+            {sla?.deliveryTime} mins{" "}
+          </h2>
+          <h3 className=" flex font-bold text-lg  ">
+            <HiCurrencyRupee className="mt-[6] h-[14] mr-[6]" />
+            {costForTwo / 100} {" for Two"}
+          </h3>
       </div>
       {/* <ul>
                 {categories&&categories.map((item) => {
