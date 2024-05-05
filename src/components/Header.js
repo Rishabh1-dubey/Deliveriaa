@@ -13,7 +13,7 @@ const Header = () => {
     const cartItems = useSelector((store) => store.cart.items);
 
     return (
-        <div className="flex justify-between  shadow-xl  text-white text-lg bg-rose-400 h-24">
+        <div className="flex min-h-16 justify-between sticky top-0 z-50 shadow-xl  text-white text-lg bg-rose-400 sm:max-h-24">
             <div className="logo-container">
                 <img className="w-[96px]" src={logo} />
             </div>
@@ -23,11 +23,11 @@ const Header = () => {
                     <li className="m-2 px-6">online : {onlineStatus ? "✅" : "🔴"}</li>
 
 
-                    <li className=" hidden xl:block px-6 hover:bg-yellow-200  pt-2 rounded-full hover:text-black hover:cursor-pointer hover:transition duration-300 "><Link to="/">Home</Link></li>
+                    <li className="  px-6 hover:bg-yellow-200  pt-2 rounded-full hover:text-black hover:cursor-pointer hover:transition duration-300 "><Link to="/">Home</Link></li>
 
                     <li className=" hidden xl:block px-6     hover:bg-yellow-200  pt-2 rounded-full hover:text-black hover:cursor-pointer  hover:transition duration-300"><Link to="/about">About Us</Link></li>
 
-                    <li className="px-6  hover:text-black  hover:rounded-full h-10 pt-[6] hover:bg-yellow-200  hover:cursor-pointer"><Link to="/contact">Contact Us</Link></li>
+                    <li className=" hidden xl:block px-6  hover:text-black  hover:rounded-full h-10 pt-[6] hover:bg-yellow-200  hover:cursor-pointer"><Link to="/contact">Contact Us</Link></li>
 
                     <li className="  px-6  hover:text-black  hover:rounded-full h-10 pt-[6] hover:bg-yellow-200  hover:cursor-pointer">
                         <Link to="/cart">Cart-{cartItems.length}</Link> </li>

@@ -3,7 +3,7 @@ const About = () => {
   return (
     <div className="bg-gray-200  absolute t-1">
       <div className=" mx-3 my-6 h-[1000px] w-auto  rounded-xl bg-gray-200 shadow-slate-300 ">
-        <div className=" relative top-5  p-6 m-auto w-[90%] border border-black rounded-2xl   shadow-2xl bg-teal-200 hover:shadow-purple-300  cursor-pointer transition ease-in-out delay-50 hover:scale-105 duration-100">
+        <div className=" relative top-5  p-6 m-auto w-[90%] border  rounded-2xl   shadow-2xl bg-teal-200 hover:shadow-purple-300  cursor-pointer transition ease-in-out delay-50 hover:scale-105 duration-100">
           <h1 className="font-bold text-3xl ">
             Hey there! Welcome to Deliveria – the place where yummy food meets
             your doorstep!
@@ -11,7 +11,7 @@ const About = () => {
         </div>
 
         {/* ----------2nd component-------- */}
-        <div className="relative top-14 flex p-6 mx-16 w-[80%] border border-black rounded-2xl   shadow-2xl bg-red hover:shadow-amber-500  cursor-pointer transition ease-in-out delay-50 hover:scale-105 duration-100">
+        <div className="relative top-14 flex p-6 mx-16 w-[80%] border border-gray-300 rounded-2xl   shadow-2xl bg-red hover:shadow-amber-500  cursor-pointer transition ease-in-out delay-50 hover:scale-105 duration-100">
           <div className="pl-28 w-[80%]">
             <h2 className=" text-2xl m-8  font-bold w-[650px]  ">
               At Deliveria, we really love food and we want to make it super
@@ -33,21 +33,21 @@ const About = () => {
           </div>
         </div>
         {/* 3------------------rd */}
-        <div className=" relative top-20  p-6 ml-52 w-[80%] border border-black rounded-2xl   shadow-2xl bg-red-100 shadow-red-2xl  hover:shadow-red-500  cursor-pointer transition ease-in-out delay-50 hover:scale-105 duration-100">
+        <div className=" relative top-20  p-6 ml-52 w-[80%] border  rounded-2xl   shadow-2xl bg-red-100 shadow-red-2xl  hover:shadow-red-500  cursor-pointer transition ease-in-out delay-50 hover:scale-105 duration-100">
           <h2 className="font-bold text-[20px]">
             What makes us special is that we care about you and our community.
             We believe in supporting local businesses and making sure you have a
             great experience every time you use our app.
           </h2>
         </div>
-        <div className=" relative top-36  p-6 ml-4 h-24 w-[80%] border border-black rounded-2xl   shadow-2xl  hover:shadow-green-300  cursor-pointer transition ease-in-out delay-50 hover:scale-105 duration-100  ">
+        <div className=" relative top-36  p-6 ml-4 h-24 w-[80%] border  rounded-2xl   shadow-2xl  hover:shadow-green-300  cursor-pointer transition ease-in-out delay-50 hover:scale-105 duration-100  ">
           <h3 className="font-bold p-4">
             Using Deliveria is a piece of cake – just pick what you want to eat,
             place your order, and sit back while we take care of the rest!
           </h3>
         </div>
 
-        <h2 className=" relative top-48 pt-8 ml-52 h-[90px]  w-[80%] border border-black rounded-2xl   shadow-2xl font-bold m-6 pl-10 bg-yellow-200 cursor-pointer hover:text-white hover:bg-red-300">
+        <h2 className=" relative top-48 pt-8 ml-52 h-[90px]  w-[80%] border  rounded-2xl   shadow-2xl font-bold m-6 pl-10 bg-yellow-200 cursor-pointer hover:text-white hover:bg-red-300">
           Join us and let's make enjoying food together super simple and fun!
         </h2>
       </div>

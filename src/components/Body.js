@@ -44,7 +44,7 @@ const Body = () => {
         <div className=" m-4 p-4">
           <input
             type="text"
-            className="text-xs border border-gray-300 shadow-md focus:border-gray-500 transition-all duration-300 px-2 py-2 outline-none  rounded-lg"
+            className="text-xs border border-gray-400 shadow-md focus:border-gray-500 transition-all duration-300 px-4 py-2 outline-none  rounded-l-2xl  md:ml-[90]  lg:ml-[40] xl:ml-0"
             placeholder="Enter your restaurent"
             value={searchText}
             onChange={(e) => {
@@ -53,7 +53,7 @@ const Body = () => {
           />
 
           <button
-            className="text-xs font-medium shadow-md px-4 py-2 outline-none ml-5 md:mr-2 right-10 border border-gray-300 bg-orange-500 hover:border-gray-500 transition-all duration-200 ease-in-out text-white rounded md:bg-white md:text-black"
+            className="text-xs font-medium shadow-md px-4 py-2 outline-none  md:mr-2 right-10 border border-gray-400 bg-orange-500 hover:border-gray-500 transition-all duration-200 ease-in-out text-white rounded-r-xl md:bg-white md:text-black"
             onClick={() => {
               console.log(searchText);
 
@@ -69,8 +69,8 @@ const Body = () => {
         </div>
 
         <div className="search  flex items-center">
-          <span
-            className="  px-4 py-2 outline-none m-2 ml-9 rounded-full  hover:bg-orange-500  hover:text-white  transition-all duration-200 ease-in-out text-black cursor-pointer"
+          <button
+            className="  px-4 py-2  mr-2 ml-[100px]  bg-orange-500 text-white xl:bg-white rounded-full xl:hover:bg-orange-500 xl:hover:text-white xl:text-black  md:mb-0 sm:ml-[222] md:ml-[60] lg:ml-[390] xl:ml-[2]"
             onClick={() => {
               const filteredList = listOfRestaurent.filter(
                 (res) => res.info.avgRating > 4
@@ -80,10 +80,10 @@ const Body = () => {
             }}
           >
             Top rated Resturet
-          </span>
+          </button>
 
-          <span
-            className=" px-4 py-2 ml-9 outline-none m-2  rounded-full  hover:bg-orange-500 hover:text-white  transition-all duration-200 ease-in-out text-black cursor-pointer"
+          <button
+            className=" hidden xl:block  px-4 py-2  mx-2 xl:ml-[40] xl:-mt-[5] bg-white rounded-full hover:bg-orange-500 hover:text-white"
             onClick={() => {
               let sortedlist = [...listOfRestaurent];
               listOfRestaurent.sort(
@@ -93,9 +93,9 @@ const Body = () => {
             }}
           >
             Nearest Restaurent
-          </span>
-          <span
-            className="   px-4 py-2 ml-9 outline-none m-2  rounded-full  hover:bg-orange-500 hover:text-white  transition-all duration-200 ease-in-out text-black cursor-pointer"
+          </button>
+          <button
+            className="   hidden xl:block px-4 py-2 mx-2 xl:ml-[80] xl:-mt-[10] bg-white rounded-full hover:bg-orange-500 hover:text-white"
             onClick={() => {
               let sortedlist = [...listOfRestaurent];
               listOfRestaurent.sort(
@@ -107,9 +107,9 @@ const Body = () => {
             }}
           >
             Cost:High to Low
-          </span>
-          <span
-            className="  px-4 py-2 ml-9 rounded-full  hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out text-black cursor-pointer"
+          </button>
+          <button
+            className="  hidden xl:block px-4 py-2 mx-2 xl:ml-[80px] xl:-mt-[09px] bg-white rounded-full hover:bg-orange-500 hover:text-white"
             onClick={() => {
               let sortedlist = [...listOfRestaurent];
               listOfRestaurent.sort(
@@ -119,10 +119,10 @@ const Body = () => {
             }}
           >
             Delivery Time
-          </span>
+          </button>
         </div>
       </div>
-      <div className=" absolute top-[195px] border-t border-gray-500 min-h-px w-[1330px] "></div>
+      {/* <div className=" absolute top-[195px] border-t border-gray-500 min-h-px w-[1330px]  "></div> */}
 
       <div className=" flex flex-wrap">
         {filteredRestaurent.map((restaurent) => (
