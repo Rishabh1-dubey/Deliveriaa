@@ -22,7 +22,9 @@ const Contact =()=>{
             </div>
             <div className="flex justify-center">
                 <button type="submit" className="bg-green-500 text-black font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 focus:outline-none focus:ring focus:ring-blue-200 hover:text-white" onSubmit={submit}>Submit</button>
+          
             </div>
+
         </form>
      
     </div>

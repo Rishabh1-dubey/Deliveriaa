@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
+
 const Body = () => {
   const [listOfRestaurent, setlistOfRestaurent] = useState([]);
   const [filteredRestaurent, setfilterRestaurent] = useState([]);
@@ -39,7 +40,7 @@ const Body = () => {
   return listOfRestaurent?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="  mb-[200px] ml-[90px]  ">
+    <div className="  mb-[200px] ml-[80px]  ">
       <div className="filter flex mb-5 ">
         <div className=" m-4 p-4">
           <input
@@ -123,7 +124,7 @@ const Body = () => {
         </div>
       </div>
       {/* <div className=" absolute top-[195px] border-t border-gray-500 min-h-px w-[1330px]  "></div> */}
-
+      <div className="pt-[40] xl:mr-[98] border-b-2 border-b-slate-300 xl:pt-0  xl:ml-[99px] xl:pb-2"></div>
       <div className=" flex flex-wrap">
         {filteredRestaurent.map((restaurent) => (
           <Link
@@ -134,6 +135,7 @@ const Body = () => {
           </Link>
         ))}
       </div>
+     {/* <Footer/> */}
     </div>
   );
 };

@@ -13,17 +13,19 @@ import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 import LogIn from "./components/LogIn";
+
 
 
 const AppLayOut = () => {
   return (
     <Provider store={appStore}>
-      <div className="app">
+      
         <Header />
         {/* <Body/> */}
         <Outlet />
-      </div>
+       <Footer/>
     </Provider>
   );
 };
