@@ -1,25 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import { act } from "react-dom/test-utils";
- const cartSlice=createSlice({
-    name:"cart",
-    initialState:{
-        items:[],
+const cartSlice = createSlice({
+  name: "cart",
+  initialState: {
+    items: [],
+  },
+  reducers: {
+    addItem: (state, action) => {
+      //mutuating our state
+      state.items.push(action.payload);
     },
-    reducers:{
-        addItem:(state,action)=>{
-            //mutuating our state
-            state.items.push(action.payload);
-        },
-        removeItem:(state,action)=>{
-            state.items=state.items.filter((item)=>{
-                return item?.info.id !==action.payload
-            });
-        },
-        clearCart:(state)=>{
-            state.items.length=[];
-        },
+    removeItmes:(state,action)=>{
+      const removeIndex=state.items.findIndex(item=>item.card.info.id === action.payload);
+      state.items.payload(removeIndex,1);
     },
-
- })
- export const{addItem, removeItem, clearCart}=cartSlice.actions;
- export default cartSlice.reducer;
+    
+    clearCart: (state) => {
+      state.items.length = [];
+    },
+    
+  },
+});
+//  export const{addItem, removeItem, clearCart}=cartSlice.actions;
+export const {
+  addItem,
+  removeItmes,
+  clearCart,
+ 
+} = cartSlice.actions;
+export default cartSlice.reducer;

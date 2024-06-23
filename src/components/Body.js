@@ -4,6 +4,8 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
 
+
+
 const Body = () => {
   const [listOfRestaurent, setlistOfRestaurent] = useState([]);
   const [filteredRestaurent, setfilterRestaurent] = useState([]);
@@ -23,7 +25,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+     "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D22.71700%26lng%3D75.83370%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     console.log(json);
@@ -40,30 +42,33 @@ const Body = () => {
   return listOfRestaurent?.length === 0 ? (
     <Shimmer />
   ) : (
+    <>
+      
     <div className="  mb-[200px] ml-[80px]  ">
+    <div className="pt-[60] xl:mr-[68] border-b-2 border-b-slate-300 xl:pt-0  xl:ml-30 xl:pb-2">
       <div className="filter flex mb-5 ">
         <div className=" m-4 p-4">
           <input
             type="text"
-            className="text-xs border border-gray-400 shadow-md focus:border-gray-500 transition-all duration-300 px-4 py-2 outline-none  rounded-l-2xl  md:ml-[90]  lg:ml-[40] xl:ml-0"
+            className="border border-solid ml-6 border-gray-400 py-2 pl-3 pr-16 rounded-2xl rounded-r-none bg-white sm:ml-[170] md:ml-[90]  lg:ml-[40] xl:ml-0"
             placeholder="Enter your restaurent"
             value={searchText}
             onChange={(e) => {
               setsearchText(e.target.value);
             }}
-          />
+            />
 
           <button
-            className="text-xs font-medium shadow-md px-4 py-2 outline-none  md:mr-2 right-10 border border-gray-400 bg-orange-500 hover:border-gray-500 transition-all duration-200 ease-in-out text-white rounded-r-xl md:bg-white md:text-black"
+            className="border border-solid  border-gray-400 py-2 pl-3 pr-4 rounded-2xl rounded-l-none bg-white sm:ml-[170] md:ml-[90]  lg:ml-[40] xl:ml-0"
             onClick={() => {
               console.log(searchText);
-
+              
               //for display on the ui we have to filtered the res...
               const filteredRestaurant = listOfRestaurent.filter((res) =>
                 res?.info?.name.toLowerCase().includes(searchText.toLowerCase())
-              );
-              setfilterRestaurent(filteredRestaurant);
-            }}
+            );
+            setfilterRestaurent(filteredRestaurant);
+          }}
           >
             search
           </button>
@@ -79,7 +84,7 @@ const Body = () => {
               // setlistOfRestaurent(filteredList);
               setfilterRestaurent(filteredList);
             }}
-          >
+            >
             Top rated Resturet
           </button>
 
@@ -92,7 +97,7 @@ const Body = () => {
               );
               setfilterRestaurent(sortedlist);
             }}
-          >
+            >
             Nearest Restaurent
           </button>
           <button
@@ -102,11 +107,11 @@ const Body = () => {
               listOfRestaurent.sort(
                 (a, b) =>
                   Number(b.info.costForTwo.substr(1, 3)) -
-                  Number(a.info.costForTwo.substr(1, 3))
+                Number(a.info.costForTwo.substr(1, 3))
               );
               setfilterRestaurent(sortedlist);
             }}
-          >
+            >
             Cost:High to Low
           </button>
           <button
@@ -118,25 +123,28 @@ const Body = () => {
               );
               setfilterRestaurent(sortedlist);
             }}
-          >
+            >
             Delivery Time
           </button>
+          {/* fksfsffkjs */}
+              </div>
         </div>
       </div>
       {/* <div className=" absolute top-[195px] border-t border-gray-500 min-h-px w-[1330px]  "></div> */}
-      <div className="pt-[40] xl:mr-[98] border-b-2 border-b-slate-300 xl:pt-0  xl:ml-[99px] xl:pb-2"></div>
+      {/* <div className="pt-[65] xl:mr-[98] border-b-2 border-b-slate-300 xl:pt-0  xl:ml-[99px] xl:pb-2"></div> */}
       <div className=" flex flex-wrap">
         {filteredRestaurent.map((restaurent) => (
           <Link
-            key={restaurent.info.id}
-            to={"/restaurant/" + restaurent.info.id}
+          key={restaurent.info.id}
+          to={"/restaurant/" + restaurent.info.id}
           >
             <RestaurentCard resData={restaurent} />
           </Link>
         ))}
       </div>
-     {/* <Footer/> */}
+  
     </div>
+        </>
   );
 };
 export default Body;
